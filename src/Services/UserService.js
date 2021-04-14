@@ -1,14 +1,14 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   getAdmins: () => {
-    return fetch("/user/admins").then((response) => {
+    return fetch("https://backendmarketplacepara.herokuapp.com/user/admins").then((response) => {
       if (response.status !== 401) return response.json().then((data) => data);
       else return { message: { msgBody: "UnAuthorized", msgError: true } };
     });
   },
 
   getLivreurs: () => {
-    return fetch("/user/livreurs").then((response) => {
+    return fetch("https://backendmarketplacepara.herokuapp.com/user/livreurs").then((response) => {
       if (response.status !== 401) return response.json().then((data) => data);
       else return { message: { msgBody: "UnAuthorized", msgError: true } };
     });
@@ -16,7 +16,7 @@ export default {
 
   addAdmin: (user) => {
     console.log(user);
-    return fetch("/user/addadmin", {
+    return fetch("https://backendmarketplacepara.herokuapp.com/user/addadmin", {
       method: "post",
       body: JSON.stringify(user),
       headers: {
@@ -31,7 +31,7 @@ export default {
 
   addLivreur: (user) => {
     console.log(user);
-    return fetch("/user/addlivreur", {
+    return fetch("https://backendmarketplacepara.herokuapp.com/user/addlivreur", {
       method: "post",
       body: JSON.stringify(user),
       headers: {
@@ -45,7 +45,7 @@ export default {
   },
 
   blockAdmin: (id) => {
-    return fetch(`/user/blockadmin/${id}`, {
+    return fetch(`https://backendmarketplacepara.herokuapp.com/user/blockadmin/${id}`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -58,7 +58,7 @@ export default {
   },
 
   blockLivreur: (id) => {
-    return fetch(`/user/blocklivreur/${id}`, {
+    return fetch(`https://backendmarketplacepara.herokuapp.com/user/blocklivreur/${id}`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -71,7 +71,7 @@ export default {
   },
 
   activeAdmin: (id) => {
-    return fetch(`/user/activeadmin/${id}`, {
+    return fetch(`https://backendmarketplacepara.herokuapp.com/user/activeadmin/${id}`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -84,7 +84,7 @@ export default {
   },
 
   activeLivreur: (id) => {
-    return fetch(`/user/activelivreur/${id}`, {
+    return fetch(`https://backendmarketplacepara.herokuapp.com/user/activelivreur/${id}`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -97,7 +97,7 @@ export default {
   },
 
   deleteAdmin: (id) => {
-    return fetch(`/user/deleteadmin/${id}`, {
+    return fetch(`https://backendmarketplacepara.herokuapp.com/user/deleteadmin/${id}`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -110,7 +110,7 @@ export default {
   },
 
   deleteLivreur: (id) => {
-    return fetch(`/user/deletelivreur/${id}`, {
+    return fetch(`https://backendmarketplacepara.herokuapp.com/user/deletelivreur/${id}`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -123,13 +123,13 @@ export default {
   },
 
   // getProductsByPriceLTH: () => {
-  //   return fetch("/product/bypricelth").then((response) => {
+  //   return fetch("https://backendmarketplacepara.herokuapp.com/product/bypricelth").then((response) => {
   //     if (response.status !== 401) return response.json().then((data) => data);
   //     else return { message: { msgBody: "UnAuthorized", msgError: true } };
   //   });
   // },
   // getProductsByPriceHTL: () => {
-  //   return fetch("/product/bypricehtl").then((response) => {
+  //   return fetch("https://backendmarketplacepara.herokuapp.com/product/bypricehtl").then((response) => {
   //     if (response.status !== 401) return response.json().then((data) => data);
   //     else return { message: { msgBody: "UnAuthorized", msgError: true } };
   //   });
@@ -137,7 +137,7 @@ export default {
 
   // postProduct: (product) => {
   //   console.log(product);
-  //   return fetch("/product/add", {
+  //   return fetch("https://backendmarketplacepara.herokuapp.com/product/add", {
   //     method: "post",
   //     body: JSON.stringify(product),
   //     headers: {

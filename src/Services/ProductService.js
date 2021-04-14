@@ -1,20 +1,20 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   getProducts: () => {
-    return fetch("/product/").then((response) => {
+    return fetch("https://backendmarketplacepara.herokuapp.com/product/").then((response) => {
       if (response.status !== 401) return response.json().then((data) => data);
       else return { message: { msgBody: "UnAuthorized", msgError: true } };
     });
   },
 
   getProductsByPriceLTH: () => {
-    return fetch("/product/bypricelth").then((response) => {
+    return fetch("https://backendmarketplacepara.herokuapp.com/product/bypricelth").then((response) => {
       if (response.status !== 401) return response.json().then((data) => data);
       else return { message: { msgBody: "UnAuthorized", msgError: true } };
     });
   },
   getProductsByPriceHTL: () => {
-    return fetch("/product/bypricehtl").then((response) => {
+    return fetch("https://backendmarketplacepara.herokuapp.com/product/bypricehtl").then((response) => {
       if (response.status !== 401) return response.json().then((data) => data);
       else return { message: { msgBody: "UnAuthorized", msgError: true } };
     });
@@ -22,7 +22,7 @@ export default {
 
   postProduct: (product) => {
     console.log(product);
-    return fetch("/product/add", {
+    return fetch("https://backendmarketplacepara.herokuapp.com/product/add", {
       method: "post",
       body: JSON.stringify(product),
       headers: {
@@ -35,7 +35,7 @@ export default {
   },
 
   addToPannier: (product) => {
-    return fetch(`/product/addtopannier/${product}`, {
+    return fetch(`https://backendmarketplacepara.herokuapp.com/product/addtopannier/${product}`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -47,7 +47,7 @@ export default {
   },
 
   getFromPannier: () => {
-    return fetch(`/product/getfrompannier`, {
+    return fetch(`https://backendmarketplacepara.herokuapp.com/product/getfrompannier`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -58,7 +58,7 @@ export default {
   },
 
   deleteFromPannier: (id) => {
-    return fetch(`/product/deletefrompannier/${id}`, {
+    return fetch(`https://backendmarketplacepara.herokuapp.com/product/deletefrompannier/${id}`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -70,7 +70,7 @@ export default {
   },
 
   deleteProduct: (id) => {
-    return fetch(`/product/deleteproduct/${id}`, {
+    return fetch(`https://backendmarketplacepara.herokuapp.com/product/deleteproduct/${id}`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -82,7 +82,7 @@ export default {
   },
 
   getProductThisSeller: () => {
-    return fetch(`/product/productthisseller`, {
+    return fetch(`https://backendmarketplacepara.herokuapp.com/product/productthisseller`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -93,7 +93,7 @@ export default {
   },
 
   getAllCategories: () => {
-    return fetch(`/product/categories`, {
+    return fetch(`https://backendmarketplacepara.herokuapp.com/product/categories`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -104,7 +104,7 @@ export default {
   },
 
   getOneProduct: (id) => {
-    return fetch(`/product/getproduct/${id}`, {
+    return fetch(`https://backendmarketplacepara.herokuapp.com/product/getproduct/${id}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

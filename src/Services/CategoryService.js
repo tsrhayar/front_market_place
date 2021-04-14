@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
     getCategories: () => {
-      return fetch("/product/").then((response) => {
+      return fetch("https://backendmarketplacepara.herokuapp.com/product/").then((response) => {
         if (response.status !== 401) return response.json().then((data) => data);
         else return { message: { msgBody: "UnAuthorized", msgError: true } };
       });
@@ -10,7 +10,7 @@ export default {
   
     postProduct: (product) => {
       console.log(product);
-      return fetch("/product/add", {
+      return fetch("https://backendmarketplacepara.herokuapp.com/product/add", {
         method: "post",
         body: JSON.stringify(product),
         headers: {

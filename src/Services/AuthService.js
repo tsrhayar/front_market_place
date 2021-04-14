@@ -2,7 +2,7 @@
 export default {
   login: (user) => {
     console.log(user);
-    return fetch("/user/login", {
+    return fetch("https://backendmarketplacepara.herokuapp.com/user/login", {
       method: "post",
       body: JSON.stringify(user),
       headers: {
@@ -18,7 +18,7 @@ export default {
 
   register: (user) => {
     console.log(user);
-    return fetch("/user/registre", {
+    return fetch("https://backendmarketplacepara.herokuapp.com/user/registre", {
       method: "post",
       body: JSON.stringify(user),
       headers: {
@@ -31,13 +31,13 @@ export default {
   },
 
   logout: () => {
-    return fetch("/user/logout")
+    return fetch("https://backendmarketplacepara.herokuapp.com/user/logout")
       .then((res) => res.json())
       .then((data) => data);
   },
 
   isAuthenticated: () => {
-    return fetch("/user/authenticated").then((res) => {
+    return fetch("https://backendmarketplacepara.herokuapp.com/user/authenticated").then((res) => {
       if (res.status !== 401) return res.json().then((data) => data);
       else return { isAuthenticated: false, user: { username: "", role: "" } };
     });
